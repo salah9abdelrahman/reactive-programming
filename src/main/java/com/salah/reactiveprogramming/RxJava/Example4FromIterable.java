@@ -35,7 +35,7 @@ public class Example4FromIterable {
                 System.out.println("onComplete");
             }
         };
-
-        myObservable.subscribe(myObserver);
+        // onNext(), onError()
+        myObservable.subscribe(System.out::println, Throwable::printStackTrace, () -> System.out.println("onComplete"));
     }
 }
